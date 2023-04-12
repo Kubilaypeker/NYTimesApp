@@ -1,5 +1,3 @@
-import 'dart:convert';
-import 'package:get/get.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -90,6 +88,7 @@ class _homeScreenState extends State<homeScreen> {
                 Flexible(
                     fit: FlexFit.loose,
                     child: ListView.builder(
+                      shrinkWrap: true,
                         itemCount: jsonList == null?0:jsonList.length,
                         itemBuilder: (BuildContext context, int index) {
                           if(modelNameText.isEmpty){
