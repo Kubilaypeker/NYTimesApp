@@ -1,6 +1,8 @@
+import 'package:auto_route/annotations.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+@RoutePage()
 class newsScreen extends StatelessWidget {
   newsScreen({Key? key, this.imageUrl, this.caption, this.content}) : super(key: key);
   var imageUrl, caption, content;

@@ -1,7 +1,9 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:get/get.dart';
 import 'package:otogootestapp/Screens/newsScreen.dart';
+import 'package:otogootestapp/route/app_router.dart';
 
 class newsPreview extends StatelessWidget {
   newsPreview({Key? key, this.caption, this.imageUrl, this.content}) : super(key: key);
@@ -12,7 +14,9 @@ class newsPreview extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextButton(
       onPressed: () {
-        Get.to(newsScreen(
+        AutoRouter.of(context);
+        context.router;
+        context.router.push(NewsRoute(
           caption: caption,
           imageUrl: imageUrl,
           content: content,

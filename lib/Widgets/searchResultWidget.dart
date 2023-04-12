@@ -1,7 +1,9 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:otogootestapp/Screens/newsScreen.dart';
+import 'package:otogootestapp/route/app_router.dart';
 
 class searchResult extends StatelessWidget {
   searchResult({Key? key, this.content, this.imageUrl, this.title}) : super(key: key);
@@ -12,13 +14,15 @@ class searchResult extends StatelessWidget {
   Widget build(BuildContext context) {
     return ElevatedButton(
         style: ButtonStyle(
-            side: MaterialStateProperty.all(BorderSide(color: Colors.black12)),
+            side: MaterialStateProperty.all(const BorderSide(color: Colors.black12)),
             backgroundColor: MaterialStateProperty.all(Colors.grey.shade900.withOpacity(1))
         ),
         onPressed: () {
-          Get.to(newsScreen(
-            imageUrl: imageUrl,
+          AutoRouter.of(context);
+          context.router;
+          context.router.push(NewsRoute(
             caption: title,
+            imageUrl: imageUrl,
             content: content,
           ));
         },

@@ -1,19 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:otogootestapp/Screens/homeScreen.dart';
 import 'package:get/get.dart';
+import 'package:otogootestapp/route/app_router.dart';
 
 void main() {
-  runApp(const GetMaterialApp(home: MyApp()));
+  runApp(GetMaterialApp(home: MyApp()));
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  MyApp({super.key});
 
-  // This widget is the root of your application.
+  final _appRouter = AppRouter();
+
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: homeScreen(),
+    return MaterialApp.router(
+      routerConfig: _appRouter.config(),
     );
   }
 }
