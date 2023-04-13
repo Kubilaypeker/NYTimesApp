@@ -1,6 +1,7 @@
 import 'package:auto_route/annotations.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:dio/dio.dart';
 import 'package:otogootestapp/Widgets/newsPreviewWidget.dart';
@@ -65,7 +66,7 @@ class _homeScreenState extends State<homeScreen> {
               itemBuilder: (BuildContext context, int index) {
             return newsPreview(
               caption: jsonList[index]['title'],
-              imageUrl: jsonList[index]['multimedia'][2]['url'],
+              imageUrl: jsonList[index]['multimedia']?[2]['url'],
               content: jsonList[index]['abstract'],
             );
           }
@@ -99,7 +100,7 @@ class _homeScreenState extends State<homeScreen> {
                           else if(jsonList[index]['title'].toString().toLowerCase().contains(modelNameText)){
                             return searchResult(
                               title: jsonList[index]['title'],
-                              imageUrl: jsonList[index]['multimedia'][2]['url'],
+                              imageUrl: jsonList[index]['multimedia']?[2]['url'],
                               content: jsonList[index]['abstract'],
                             );
                           }

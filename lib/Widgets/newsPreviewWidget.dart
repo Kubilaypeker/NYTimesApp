@@ -29,7 +29,12 @@ class newsPreview extends StatelessWidget {
           children: [
             SizedBox(
               width: MediaQuery.of(context).size.width,
-              child: Image.network(imageUrl,fit: BoxFit.fitWidth,),
+              child: imageUrl != null ? Image.network(imageUrl, fit: BoxFit.fill,) : Center(
+                  child:Text(
+                "Image is not found",
+                    style: GoogleFonts.montserrat(color: Colors.black, fontWeight: FontWeight.bold),
+                  ),
+                ),
               ),
             Container(
                 decoration: const BoxDecoration(

@@ -27,7 +27,7 @@ class searchResult extends StatelessWidget {
           ));
         },
         child: ListTile(
-          leading: Image.network(imageUrl, fit: BoxFit.cover,),
+          leading: imageUrl != null ? Image.network(imageUrl, fit: BoxFit.fill,) : const CircularProgressIndicator(color: Colors.white38),
           title: Text(title, style: GoogleFonts.poppins(color: Colors.white, fontWeight: FontWeight.w600),),
         )
     );
